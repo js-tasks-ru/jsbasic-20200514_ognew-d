@@ -9,15 +9,22 @@ function print(text) {
  * Эту функцию нужно поменять так,
  * чтобы функция sayHello работала корректно
  */
+
+ 
 function isValid(name) {
+  if (name == undefined || name.length < 4 || name.includes(` `)) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 function sayHello() {
-  const userName = prompt('Введите ваше имя');
+  const userName = prompt(`Введите ваше имя`);
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
   } else {
-    print('Некорректное имя');
+    print(`Некорректное имя`);
   }
 }
